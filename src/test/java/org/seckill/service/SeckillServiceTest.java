@@ -117,4 +117,21 @@ public class SeckillServiceTest {
             logger.warn("exposer={}", exposer);
         }
     }
+
+    @Test
+    public void executeSeckillProcedure(){
+        long seckillId = 1001;
+        long phone = 10000000000L;
+        Exposer exposer = seckillService.exportSeckillUrl(seckillId);
+        if(exposer.isExposed()){
+            String md5 = exposer.getMd5();
+            SeckillExecution seckillExecution = seckillService.executeSeckillProcedure(seckillId, phone, md5);
+            logger.info(seckillExecution.getStateInfo());
+            /**
+             * 18:22:31.961 [main] INFO  o.seckill.service.SeckillServiceTest - 秒杀成功
+             * 18:22:52.542 [main] INFO  o.seckill.service.SeckillServiceTest - 重复秒杀
+             */
+        }
+    }
+
 }
