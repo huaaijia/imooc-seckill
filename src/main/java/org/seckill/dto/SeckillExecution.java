@@ -3,6 +3,8 @@ package org.seckill.dto;
 import org.seckill.entity.SuccessKilled;
 import org.seckill.enums.SeckillStatEnum;
 
+import java.io.Serializable;
+
 /**
  * 封装秒杀执行后的结果
  * Created by huaaijia on 2016/10/13.
@@ -47,5 +49,37 @@ public class SeckillExecution {
                 ", state=" + state +
                 ", seckillId=" + seckillId +
                 '}';
+    }
+
+    public long getSeckillId() {
+        return seckillId;
+    }
+
+    public void setSeckillId(long seckillId) {
+        this.seckillId = seckillId;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public String getStateInfo() {
+        return stateInfo;
+    }
+
+    public void setStateInfo(String stateInfo) {
+        this.stateInfo = stateInfo;
+    }
+
+    public SuccessKilled getSuccessKilled() {
+        return successKilled;
+    }
+
+    public void setSuccessKilled(SuccessKilled successKilled) {
+        this.successKilled = successKilled;
     }
 }

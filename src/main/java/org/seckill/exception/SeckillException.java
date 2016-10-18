@@ -1,5 +1,7 @@
 package org.seckill.exception;
 
+import java.io.Serializable;
+
 /**
  * 所有秒杀相关的业务异常
  * Created by huaaijia on 2016/10/13.

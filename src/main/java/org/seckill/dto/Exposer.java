@@ -1,5 +1,7 @@
 package org.seckill.dto;
 
+import java.io.Serializable;
+
 /**
  * 暴露秒杀地址DTO（data transaction object）
  * 属性大部分与db无关

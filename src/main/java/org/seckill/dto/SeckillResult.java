@@ -1,10 +1,12 @@
 package org.seckill.dto;
 
+import java.io.Serializable;
+
 /**
  * Created by huaaijia on 2016/10/13.
  * 所有ajax返回类型，封装json结果
  */
-public class SeckillResult<T> {
+public class SeckillResult<T> implements Serializable{
 
     private boolean success;
 
@@ -20,6 +22,12 @@ public class SeckillResult<T> {
     public SeckillResult(boolean success, T data) {
         this.success = success;
         this.data = data;
+    }
+
+    public SeckillResult(boolean success, T data, String error) {
+        this.success = success;
+        this.data = data;
+        this.error = error;
     }
 
     public boolean isSuccess() {
